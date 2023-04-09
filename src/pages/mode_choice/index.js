@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./modeChoice.module.css";
 import { useContext, useEffect, useState } from "react";
 import ModeDistanceContext from "../../../contexts/ModeDistance";
+import { useRouter } from "next/router";
 
 import data0 from "../../../assets/data/sample_db_0km.json";
 import data1 from "../../../assets/data/sample_db_5km.json";
@@ -11,13 +12,22 @@ import data4 from "../../../assets/data/sample_db_20km.json";
 import data5 from "../../../assets/data/sample_db_25km.json";
 
 export default function Table() {
+
+  const router = useRouter()
   const { mode, changeMode, distance, changeDistance } =
     useContext(ModeDistanceContext);
 
+    useEffect(()=>{
+      console.log(distance, mode)
+      if(distance == '' || mode==''){
+        router.push('/')
+      }
+    },[distance, mode, router])
+    
     if(distance == '' || mode==''){
       return <div></div>
     }
-
+    
   const Mode0_15_20 = {
     1: ["Bus Type 1"],
     2: ["Bus Type 2"],
