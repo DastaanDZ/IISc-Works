@@ -193,6 +193,9 @@ padding: 9px;
     width: 160px;
     padding: 13px;
   }
+  .radio_btn{
+    margin: 5px;
+  }
 }
 
 @media (max-width: 900px) {
