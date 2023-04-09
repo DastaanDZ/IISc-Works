@@ -232,3 +232,14 @@
 .components{
   padding: 2rem;
 }
+
+@media (max-width: 1220px) {
+  .components {
+    padding: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .components {
+    padding: 1.5rem;
+  }
+}

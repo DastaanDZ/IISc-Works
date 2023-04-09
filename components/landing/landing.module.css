@@ -6,17 +6,21 @@
 
 .travel_container{
     display: flex;
-    width: 50%;
+    width: 57%;
     height: 100%;
     align-items: center;
     justify-content: center;
+    margin-left: -55px;
 }
 .travel{
-    width: 55rem;
+    /* width: 55rem; */
+    width: 111%;
+    
 }
 .container{
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 .avatar_container{
     display: flex;
@@ -130,4 +134,79 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+@media (max-width: 1440px) {
+  .travel{
+    width: 50rem;
+
+  }
+}
+@media (max-width: 1220px) {
+  .travel_container{
+    margin-right: 1rem;
+  }
+  .travel{
+    width: 41rem;
+
+  }
+  .container{
+    width: 50%;
+  }
+  .avatar{
+    height: 8rem;
+  }
+  .heading{
+    font-size: 2rem;
+  }
+  .radio_buttons{
+    margin: 8px 0 8px 0;
+  }
+  .radio_btn{
+    margin: 6px 6px 0px 6px;
+  }
+  .btn{
+    font-size: 0.9rem;
+width: 116px;
+padding: 9px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .parent_container{
+    justify-content: center;
+  }
+  .travel_container{
+    display: none;
+
+  }
+  .container{
+    width: 70%;
+  }
+  .avatar{
+    height: 10rem;
+  }
+  .heading{
+    font-size: 3rem;
+  }
+  .btn{
+    font-size: 1rem;
+    width: 160px;
+    padding: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+}
+
+@media (max-width: 768px) {
+  .container{
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .container{
+    width: 100%;
+  }
 }
