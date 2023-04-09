@@ -27,7 +27,7 @@ export default function Table() {
     if(distance == '' || mode==''){
       return <div></div>
     }
-    
+
   const Mode0_15_20 = {
     1: ["Bus Type 1"],
     2: ["Bus Type 2"],
@@ -206,7 +206,7 @@ export default function Table() {
   return (
     <>
     <div className={styles.container}> 
-      <p className={styles.heading}>Mode choice</p>
+      <p className={styles.heading}>Mode Choice</p>
       <table className={styles.contentTable}>
         <thead>
           <tr>
