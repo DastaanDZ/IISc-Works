@@ -116,7 +116,11 @@ p{
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  color: white
+  /* color: black */
+}
+table{
+  width: 70%;
+  margin: 0;
 }
 @media (max-width: 1220px) {
   label{
@@ -126,5 +130,15 @@ p{
 @media (max-width: 1024px) {
   label{
     font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  table{
+    width: 80%;
+  }
+}
+@media (max-width: 550px) {
+  table{
+    width: 90%;
   }
 }

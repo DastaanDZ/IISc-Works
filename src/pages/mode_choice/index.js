@@ -209,9 +209,10 @@ export default function Table() {
       <p className={styles.heading}>Mode Choice</p>
       <table className={styles.contentTable}>
         <thead>
-          <tr>
+          <tr >
+          <td style={{'color' : 'white', 'font-family' : '"Raleway", sans-serif','font-size': '1rem','font-weight': '400'}}>Modes</td>
             {extractedMode?.map((item) => (
-              <td>
+              <td style={{'color' : 'white'}}>
                 <p>{item}</p>
                 <input type="radio" name="radio" id={item} />
               </td>
@@ -220,31 +221,37 @@ export default function Table() {
         </thead>
         <tbody>
           <tr>
+          <td>Total time spent while inside the vehicle</td>
             {ivttValues.map((item) => (
               <td>{`${item} min`}</td>
             ))}
           </tr>
           <tr>
+          <td>Time spent outside the vehicle</td>
           {modeWalkWaitTimeSumArr.map((item) => (
             <td>{`${item} min`}</td>
           ))}
           </tr>
           <tr>
+          <td>Possible delay due to traffic congestion or other uncertainities</td>
             {tVariab.map((item) => (
               <td>{`... up to ${item} min more`}</td>
             ))}
           </tr>
           <tr>
+          <td>Total one-way cost of travel</td>
             {tCost.map((item) => (
               <td>{`Rs. ${item}`}</td>
             ))}
           </tr>
           <tr>
+          <td>Extent of crowding in the vehicle</td>
             {tCrowd.map((item) => (
               <td>{item == 1 ? 'Many seats available' : item == 2? 'Some seats available' : item == 3? 'All Seats occupied' : '' }</td>
             ))}
           </tr>
           <tr>
+          <td>Service Type</td>
             {tServ.map((item) => (
               <td>{item == 1 ? 'Ordinary' : item == 2? 'Express None-AC' : item == 3? 'Express AC': '' }</td>
             ))}
