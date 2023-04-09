@@ -14,6 +14,10 @@ export default function Table() {
   const { mode, changeMode, distance, changeDistance } =
     useContext(ModeDistanceContext);
 
+    if(distance == '' || mode==''){
+      return <div></div>
+    }
+
   const Mode0_15_20 = {
     1: ["Bus Type 1"],
     2: ["Bus Type 2"],
