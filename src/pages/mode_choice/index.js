@@ -11,6 +11,15 @@ import data3 from "../../../assets/data/sample_db_15km.json";
 import data4 from "../../../assets/data/sample_db_20km.json";
 import data5 from "../../../assets/data/sample_db_25km.json";
 
+import {BsFillTrainFreightFrontFill} from 'react-icons/bs'
+import {FcAutomotive} from 'react-icons/fc'
+import {MdTwoWheeler} from 'react-icons/md'
+import {AiFillCar} from 'react-icons/ai'
+import {IoMdBicycle} from 'react-icons/io'
+import {BsFillBusFrontFill} from 'react-icons/bs'
+import {MdEventSeat} from 'react-icons/md'
+import {MdSensorOccupied} from 'react-icons/md'
+import {MdAirlineSeatReclineExtra} from 'react-icons/md'
 export default function Table() {
 
   const router = useRouter()
@@ -213,6 +222,7 @@ export default function Table() {
           <td style={{'color' : 'white', 'font-family' : '"Raleway", sans-serif','font-size': '1rem','font-weight': '400'}}>Modes</td>
             {extractedMode?.map((item) => (
               <td style={{'color' : 'white'}}>
+              {item === "Bus Type 1" || item === "Bus Type 2" || item === "Bus Type 3"? <BsFillBusFrontFill/> : item ==="Walk / Bicycle" ? <IoMdBicycle/> : item === "Ride-hailing Car" || item === "Own Car" ? <AiFillCar/> : item === "Ride-hailing Two-wheeler" || item === "Own Two-wheeler" ? <MdTwoWheeler/> : item === "Auto"? <FcAutomotive/> : item === "Metro / Train"? <BsFillTrainFreightFrontFill/> : ""}
                 <p>{item}</p>
                 <input type="radio" name="radio" id={item} />
               </td>
@@ -247,13 +257,15 @@ export default function Table() {
           <tr>
           <td>Extent of crowding in the vehicle</td>
             {tCrowd.map((item) => (
-              <td>{item == 1 ? 'Many seats available' : item == 2? 'Some seats available' : item == 3? 'All Seats occupied' : '' }</td>
+              <td>{item == 1 ? <MdEventSeat/> : item == 2? <MdEventSeat/> : item == 3? <MdSensorOccupied/> : '' }
+              {item == 1 ? 'Many seats available' : item == 2? 'Some seats available' : item == 3? 'All Seats occupied' : '' }</td>
             ))}
           </tr>
           <tr>
           <td>Service Type</td>
             {tServ.map((item) => (
-              <td>{item == 1 ? 'Ordinary' : item == 2? 'Express None-AC' : item == 3? 'Express AC': '' }</td>
+              <td>{item == 1 ? <MdAirlineSeatReclineExtra/> : item == 2? <MdAirlineSeatReclineExtra/> : item == 3? <MdAirlineSeatReclineExtra/>: '' } 
+              {item == 1 ? 'Ordinary' : item == 2? 'Express None-AC': item == 3? 'Express AC': '' }</td>
             ))}
           </tr>
         </tbody>
